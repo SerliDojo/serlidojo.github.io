@@ -1,0 +1,56 @@
+---
+layout: post
+title:  "Frameworks Web #3 - Java Server Faces"
+date:   2013-06-06 19:27:13
+categories: jekyll update
+---
+
+
+Dernièrement, dans les locaux de SERLI, s'est déroulé le premier coding dojo de la série “Frameworks Web”. Cette soirée fut l'occasion pour plusieurs d'entre nous de découvrir Wicket, un framework orienté composant, de la communauté Apache [http://wicket.apache.org](http://wicket.apache.org).
+
+Le défi
+========
+
+Le défi de la soirée était de réaliser une application de prospection de clients à partir de maquettes (page HTML et base de données SQL) et de quelques services fonctionnels, tout en respectant les pratiques couramment rencontrées en entreprise. Tour à tour, des binômes se sont succédés devant le PC pour construire petit à petit l'application. Ceux d'entre nous qui connaissaient déjà un peu Wicket aiguillaient les novices dans leurs choix et leurs réflexions au moment de coder.
+
+Un projet Maven, une classe Application
+========
+
+Nous avons tout d'abord commencé par créer un projet Maven avec une dépendance sur Wicket (forcément !). Nous avons ensuite créé une classe symbolisant une application Wicket et référencé cette classe dans le web.xml du projet avec le filtre Wicket. Cette classe permet de définir la configuration Wicket de manière globale à l'application, comme par exemple la classe à utiliser pour rendre la page d'accueil.
+
+{% highlight xml %}
+<filter>
+	<filter-name>superprosper</filter-name>
+	<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+	<init-param>
+		<param-name>applicationClassName</param-name>
+		<param-value>com.serli.dojo.superprosper.wicket.SuperProsperApplication</param-value>
+	</init-param>
+</filter>
+<filter-mapping>
+	<filter-name>superprosper</filter-name>
+	<url-pattern>/*</url-pattern>
+</filter-mapping>
+{% endhighlight %}
+
+*Extrait du fichier web.xml*
+
+{% highlight java %}
+public class SuperProsperApplication extends WebApplication {
+	@Override
+	public Class<? extends Page> getHomePage() {
+		return HomePage.class;
+	}
+}
+{% endhighlight %}
+
+*Extrait du fichier SuperProsperApplication.java*
+
+Une page = un fichier HTML et une classe Java
+========
+
+La création de la première classe de rendu, représentant une page Wicket, fut l'occasion de voir la première spécificité de ce framework, à savoir le couplage entre une page HTML et une classe Java, nommées à l'identique et située côte à côté dans le classpath. Cette première étape nous a permis de voir que Wicket appliquait le modèle MVC et forçait l'utilisateur à le suivre également. En effet, la partie "Vue" est assurée par cette association entre la classe Java et le fichier HTML.
+
+Nous avons alors recopié la page HTML de la maquette dans la page HTML précédemment créée, nous avons déployé notre application et accédé à la racine de contexte de l'application. La page principale s'afficha, l'application Wicket "SuperProsper" était née.
+
+![Première page]({{ site.url }}/img/maquette.png)
