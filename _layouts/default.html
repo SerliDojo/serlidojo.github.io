@@ -12,35 +12,36 @@
         <!-- Custom CSS -->
         <link rel="stylesheet" href="/css/main.css">
 
+		<!-- Google Font -->
+		<link href='http://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
     </head>
     <body>
 
+		<div class="header">
+		  <h1 class="title"><a href="/">{{ site.name }}</a></h1>
+		</div>
+
         <div class="container">
-          <div class="site">
-            <div class="header">
-              <h1 class="title"><a href="/">{{ site.name }}</a></h1>
-              <a class="extra" href="/">home</a>
-            </div>
+			<div class="site">
 
                 {{ content }}
-
-            <div class="footer">
-              <div class="contact">
-                <p>
-                  Your Name<br />
-                  What You Are<br />
-                  your@email.com
-                </p>
-              </div>
-              <div class="contact">
-                <p>
-                  <a href="http://github.com/yourusername/">github.com/yourusername</a><br />
-                  <a href="http://twitter.com/yourusername/">twitter.com/yourusername</a><br />
-                </p>
-              </div>
-            </div>
-          </div>
+			</div>
         </div> <!-- /container -->
+
+		<div class="footer site">
+		  <div class="contact">
+			<p>
+			  L'équipe du dojo de Serli<br />
+			  <a href="mailto:dojo@serli.com">dojo@serli.com</a><br />
+			  <a href="mailto:dojo-membres@serli.com">dojo-membres@serli.com</a>
+			</p>
+		  </div>
+		  <div class="partner">
+			<p>
+			  <a href="http://www.serli.com/"><img src="img/serli.png" /></a><br />
+			</p>
+		  </div>
+		</div>
 
     </body>
 </html>
