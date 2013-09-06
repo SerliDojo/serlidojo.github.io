@@ -5,14 +5,14 @@ date:   2012-04-05 19:27:13
 comments: true
 ---
 
-Dernièrement, dans les locaux de SERLI, s'est déroulé le premier coding dojo de la série “Frameworks Web”. Cette soirée fut l'occasion pour plusieurs d'entre nous de découvrir Wicket, un framework orienté composant, de la communauté Apache [http://wicket.apache.org].
+Dernièrement, dans les locaux de SERLI, s'est déroulé le premier coding dojo de la série “Frameworks Web”. Cette soirée fut l'occasion pour plusieurs d'entre nous de découvrir Wicket, un framework orienté composant, de la communauté Apache ([http://wicket.apache.org](http://wicket.apache.org)).
 
 
 Le défi
 ==========
 
-
 Le défi de la soirée était de réaliser une application de prospection de clients à partir de maquettes (page HTML et base de données SQL) et de quelques services fonctionnels, tout en respectant les pratiques couramment rencontrées en entreprise. Tour à tour, des binômes se sont succédés devant le PC pour construire petit à petit l'application. Ceux d'entre nous qui connaissaient déjà un peu Wicket aiguillaient les novices dans leurs choix et leurs réflexions au moment de coder.
+
 
 Un projet Maven, une classe Application
 ==========
@@ -58,7 +58,7 @@ Nous avons alors recopié la page HTML de la maquette dans la page HTML précéd
 ![Première page]({{ site.url }}/img/maquette.png)
 
 
-La liaison HTML ↔ Java par identifiant Wicket
+La liaison HTML - Java par identifiant Wicket
 ==========
 
 Pour le moment l'application se résumait à une page statique. Nous avons donc continué en remplaçant les composants statiques de la page HTML par des composants Wicket instanciés directement dans la classe Java de la page. Nous avons alors découvert l'attribut wicket:id à placer dans les tags HTML que l'on veut traiter en Wicket, via la classe Java. La valeur de cet attribut est à passer au moment de l'appel du constructeur du composant Wicket.
