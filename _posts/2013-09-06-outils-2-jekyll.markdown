@@ -1,7 +1,7 @@
 ---
 layout: post
-title:  "Outils #1 - Git"
-date:   2010-11-09 19:27:13
+title:  "Outils #2 - Jekyll"
+date:   2013-09-06 21:30:00
 comments: true
 ---
 
