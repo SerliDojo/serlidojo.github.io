@@ -18,9 +18,9 @@ Ce blog devra permettre de publier les comptes-rendus et d'annoncer les différe
 Un site statique orienté blog
 ----------
 
-Mélanger un peu de langage wiki, un peu de templating et quelques fonctionnalités de blog comme les permaliens, les catégories et les billets ; secouer (sans frapper) et server le tout en ruby. Vous obtiendrez un site statique simple, rapide, fonctionnel.
+Mélangez un peu de langage wiki, un peu de templating et quelques fonctionnalités de blog comme les permaliens, les catégories et les billets ; secouez (sans frapper) et servez le tout en ruby. Vous obtiendrez un site statique simple, rapide, fonctionnel.
 
-En effet, Jekyll va associer un langage de contenu comme le Textile à un langage de template, le Liquid. Il s'appuie sur cette combinaison pour fournir un moteur de blog minimaliste basé sur des principes statiques comme les noms de fichiers.
+En effet, Jekyll va associer un langage de contenu comme le Textile à un langage de template, le Liquid. Il s'appuie sur cette combinaison pour fournir un moteur de blog minimaliste basé sur des principes statiques comme les noms de fichier.
 
 
 Une installation basée sur Ruby
@@ -28,33 +28,33 @@ Une installation basée sur Ruby
 
 Jekyll s'appuie sur Ruby ainsi que quelques modules supplémentaires pour construire les sites. 
 
-Par défaut, il ne supporte que les plates-formes Unix. En effet, l'installation de Ruby et de ces modules n'est pas toujours très intuitives sous Windows.
+Par défaut, il ne supporte que les plates-formes Unix. En effet, l'installation de Ruby et des modules supplémentaires n'est pas toujours très intuitive sous Windows.
 
-Le Coding Dojo se voulant proche des conditions de travail réelles, nous avons tenté l'aventure sous ce dernier système.
+Le coding dojo se voulant proche des conditions de travail réelles, nous avons tenté l'aventure sous ce dernier système.
 
-[Quelques tutos](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html) plus tard, nous avions un moteur Jekyll tout prêt, mais sans le module Pygments, nécessaire à la coloration syntaxique, la partie liée à Python n'ayant pas été couronnée de succès).
+[Quelques tutos](http://www.madhur.co.in/blog/2011/09/01/runningjekyllwindows.html) plus tard, nous avions un moteur Jekyll tout prêt, mais sans le module Pygments, nécessaire à la coloration syntaxique, la partie liée à Python n'ayant pas été couronnée de succès.
 
 
 Une structure de projet légère
 ----------
 
-Lorsque l'on démarre un site Jekyll, on commence par une petite commande `jekyll new dojo-serli`. On obtient alors une structure de répertoire assez simple, composée de seulement trois dossiers (_layouts, _posts et css).
+Lorsque l'on démarre un site Jekyll, on commence par une petite commande `jekyll new dojo-serli`. On obtient alors une structure de répertoire assez simple, composée de seulement trois dossiers (`_layouts`, `_posts` et `css`).
 
 ![Structure du projet après la création](/img/jekyll/structure-creation.png)
 
-On remarque d'emblée que les dossiers et fichiers débutant par un `_` seront supprimés du site final. D'ailleurs, après l'exécution de la commande suivante, `jekyll build`, nous obtenons un dossier supplémentaire (_site) contenant le résultat de la construction du site.
+On remarque d'emblée que les dossiers et fichiers débutant par un `_` seront supprimés du site final. D'ailleurs, après l'exécution de la commande suivante, `jekyll build`, nous obtenons un dossier supplémentaire (`_site`) contenant le résultat de la construction du site.
 
-On y retrouve nos ressources statiques (CSS) ainsi que les pages définitives comme le fichier index.html. On y trouve également les fameux billets de blog, regroupés dans des sous-dossiers par catégorie, année, mois et jour.
+On y retrouve nos ressources statiques (CSS) ainsi que les pages définitives comme le fichier `index.html`. On y trouve également les fameux billets de blog, regroupés dans des sous-dossiers par catégorie, année, mois et jour.
 
 ![Structure du projet après la compilation](/img/jekyll/structure-compilation.png)
 
-Le site peut maintenant être déployé sur un serveur quelconque comme Apache, toutes les pages seront consultables statiquement. Les billets seront alors accéder par une URL simple comme `/jekyll/update/2013/09/06/welcome-to-jekyll.html` pour le billet par défaut.
+Le site peut maintenant être déployé sur un serveur quelconque comme Apache ; toutes les pages seront consultables statiquement. Les billets seront alors accessible par une URL simple comme `http://mondomaine/jekyll/update/2013/09/06/welcome-to-jekyll.html` pour le billet par défaut.
 
 
 La configuration en YAML
 ----------
 
-La première modification que nous avons apporté à ce projet par défaut est sa configuration. Cette dernière se trouve simplement dans un fichier _config.yml.
+La première modification que nous avons apporté à ce projet par défaut est sa configuration. Cette dernière se trouve simplement dans un fichier `_config.yml`.
 
 Ce fichier ne contient pour l'instant que le nom du site, l'activation de Pygments (que nous avons désactivé, voir plus haut) ainsi que le moteur Markdown.
 
@@ -80,7 +80,7 @@ Du contenu simple et explicite
 
 L'idée de base est donc de produire du contenu dans un langage simple et courant, comme ceux utilisés dans les wiki. Le moteur de Jekyll pourra ensuite l'interpréter et le transformer en HTML statique.
 
-Jekyll accepte le langage wiki Textile, ainsi que le langage Markdown. Mais il accepte également de traiter les fichiers écrits en lanage HTML. C'est ainsi que le fchier index.html est interprété. Nous avons donc commencé par éditier ce fichier. 
+Jekyll accepte le langage wiki Textile, ainsi que le langage Markdown. Mais il accepte également de traiter les fichiers écrits en lanage HTML. C'est ainsi que le fchier `index.html` est interprété. Nous avons donc commencé par éditier ce fichier. 
 
 Malgré que le langage HTML soit utilisé, nous retrouvons l'en-tête YAML ainsi que quelques balises de templating, notamment dans la construction de la liste des billets :
 
